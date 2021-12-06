@@ -10,7 +10,7 @@ Kylie
 
 
 Jennifer
-
+1.work on powerpoint and create funtion
 
 
 Esmeralda
