@@ -9,7 +9,7 @@ Kylie
 
 
 Jennifer
-
+- work on powerpoint
 
 
 Esmeralda
