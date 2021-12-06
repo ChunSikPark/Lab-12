@@ -10,7 +10,8 @@ Kylie
 
 
 Jennifer
-1.work on powerpoint and create funtion
+
 
 
 Esmeralda
+Create a pop-up window that welcomes the user to the game, outputs rules and asks user to input their name.
