@@ -142,7 +142,7 @@ window.title("Welcome to the Pig Game!!")
 window.geometry("850x600")
 window.configure(background='#d0ae9b') #Set the background color
 
-label = Label(window,text='Enter 1 to Play, Enter 2 to read the rules.',font=('Helvetica',15))
+label = Label(window,text='Welcome to the pig game! \nEnter 1 to Play, Enter 2 to read the rules.',font=('Helvetica',15))
 label.configure(background='#d0ae9b')
 label.pack()
 
@@ -156,7 +156,7 @@ def main ():
         x = int(e.get()) 
         if x ==1 or x == 2: # 1 for play, 2 for pop up the Rule
             if x == 2:
-                label= Label(text='Welcome to the pig game! \n1. The game involves two players. \n2. A player repeatedly rolls a dice until they decide to hold or roll a one. \n3. If a player decides to hold then player keep the point and end his turn \n4. If they roll a one then they are automatically out of the game and the other player wins. \n5. If the player rolls any number other than one then it is added to their total. \n6. Then the player continues to roll the dice. \n7. The player who has more points is the winner') #Fix label1 as Player 1
+                label= Label(text='1. The game involves two players. \n2. A player repeatedly rolls a dice until they decide to hold or roll a one. \n3. If a player decides to hold then player keep the point and end his turn \n4. If they roll a one then they are automatically out of the game and the other player wins. \n5. If the player rolls any number other than one then it is added to their total. \n6. Then the player continues to roll the dice. \n7. The player who has more points is the winner') #Fix label1 as Player 1
                 label.configure(background='#d0ae9b',font=('Helvetica',15))
                 label.pack()
                 label1 = Label(text="Do not press roll button once you get BUSTED!",font=('Helvetica',25))
@@ -303,6 +303,15 @@ elif count == count2:
 
 
 root.mainloop()
+with open("winner.txt","w") as myfile:
+    player1 = count
+    player2 = count2
+    if player1 > player2:
+        myfile.write("Plaeyer 1 has won the game with total points of "+ str(player1))
+    elif player2 > player1:
+        myfile.write("Player 2 has won the game with total points of " + str(player2))
+    elif player1 == player2:
+        myfile.write("The game is Draw")
 
 t.mainloop()
-    
+
