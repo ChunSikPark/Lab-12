@@ -20,8 +20,8 @@ Created on Mon Dec  6 11:30:29 2021
     
 import turtle as t
 
-t.speed(500)
-t.pensize(10)
+t.speed(900)
+t.pensize(8)
 t.penup()
 t.goto(0,-150)
 t.hideturtle()
@@ -125,5 +125,11 @@ t.goto(15,250)
 t.color("#994b6e")
 style = ('Calibri',75, 'bold')
 t.write('Pig Game', font=style, align='center')
+
+#close
+t.goto(19,-200)
+t.color('#c9759b')
+style = ('Calibri',20,)
+t.write('click on screen to close', font=style, align='center')
 
 t.mainloop()
