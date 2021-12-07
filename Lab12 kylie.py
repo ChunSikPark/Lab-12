@@ -20,10 +20,11 @@ Created on Mon Dec  6 11:30:29 2021
     
 import turtle as t
 
-t.speed(900)
-t.pensize(8)
+t.speed(500)
+t.pensize(10)
 t.penup()
 t.goto(0,-150)
+t.hideturtle()
 t.pendown()
 
 #head
@@ -42,6 +43,11 @@ t.goto(-80,0)
 t.pendown()
 t.fillcolor("black")
 t.begin_fill()
+'''
+for i in range(180):
+    t.forward(1)
+    t.left(2)
+'''
 t.circle(30)
 t.end_fill()
 
@@ -50,6 +56,11 @@ t.penup()
 t.goto(110,0)
 t.pendown()
 t.begin_fill()
+'''
+for i in range(180):
+    t.forward(1)
+    t.left(2)
+'''
 t.circle(30)
 t.end_fill()
 
@@ -117,5 +128,12 @@ t.forward(130)
 t.left(145)
 t.forward(93)
 t.end_fill()
+t.penup()
+
+#title
+t.goto(15,250)
+t.color("#994b6e")
+style = ('Calibri',75, 'bold')
+t.write('Pig Game', font=style, align='center')
 
 t.mainloop()
