@@ -43,11 +43,6 @@ t.goto(-80,0)
 t.pendown()
 t.fillcolor("black")
 t.begin_fill()
-'''
-for i in range(180):
-    t.forward(1)
-    t.left(2)
-'''
 t.circle(30)
 t.end_fill()
 
@@ -56,11 +51,6 @@ t.penup()
 t.goto(110,0)
 t.pendown()
 t.begin_fill()
-'''
-for i in range(180):
-    t.forward(1)
-    t.left(2)
-'''
 t.circle(30)
 t.end_fill()
 
