@@ -1,23 +1,62 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Dec  6 18:59:29 2021
+Created on Mon Dec  6 11:30:29 2021
 
 @author: brian
 """
+
+    # By submitting this assignment, I agree to the following:
+    #   "Aggies do not lie, cheat, or steal, or tolerate those who do."
+    #   "I have not given or received any unauthorized aid on this assignment."
+    #
+    # Names:        Brian Lee
+    #               Kylie Thomas
+    #              Esmeralda Garcia
+    #               Jennifer Cortez
+    # Section:      514
+    # Assignment:   Lab 12
+    # Date:         06 12 2021
+    # 
 from tkinter import *
 import random
 
+window = Tk()
+window.title("Welcome to the Pig Game!!")
+window.geometry("700x700")
+window.configure(background='#d0ae9b')
+
+label1 = Label(window,text='',font=('Helvetica',15))
+
+def main ():
+    label= Label(text='Welcome to the pig game! \nThe game involves two players. \nA player repeatedly rolls a dice until they decide to hold or roll a one. \nIf a player decides to hold then their score does not change \nand\nIf they roll a one then they are automatically out of the game and the other player wins. \nIf the player rolls any number other than one then it is added to their total. \nThen the player continues to roll the dice.') #Fix label1 as Player 1
+    label.pack()
+
+
+
+
+def button_exit():
+    window.destroy()
+    button1 = Button(window,text = "Rules", command = main,padx=10,pady=10,fg = "black")
+ 
+button1 = Button(window,text = "Rules", command = main,padx=10,pady=10,fg = "black")
+button1.pack()
+button = Button(text = "Play", command = button_exit,padx=10,pady=10,fg = "red")
+button.pack()
+
+
+window.mainloop()
 
 #Player 1's Turn
 root = Tk()
 
-root.title("Player 1's Turn")
-root.geometry("600x600")
+root.title("Player 1's Turn") #Title of the window
+root.geometry("600x600") #Size of the window
 
 label1 = Label(root,text='', font=('Helvetica',30))
 label = Label(root, text='',font=('Helvetica',150))
 label2 = Label(root,text='',font=('Helvetica',30))
 count = 0
+
 
 
 def roll_dice():
@@ -35,6 +74,10 @@ def roll_dice():
         label.configure(text='Bust!',font=("helvetica",150))
         label.pack()
         count = 0 #his point become 0
+
+        label3 = Label(root, text="You Got Busted!",font=("helvetica",30)) #If user busted, print you got busted
+        label3.pack()
+        root.after(1500,lambda: root.destroy()) #If user busted, close window 2 seconds later
     else:
         label.configure(text=f'{dice_roll}') #Other wise, shows the face of dice and add points
         label.pack()
@@ -47,11 +90,13 @@ button.pack()
 
 button2 = Button(root,text='Hold',command = root.destroy, padx=10,pady=10) #Button to hold
 button2.pack()
-
-button3 = Button(root,text='I Got Busted',command = root.destroy,padx=10,pady=10) #If user busted, has to press this button
-button3.pack()
 root.mainloop()
 
+
+
+# =============================================================================
+# #Code for player 2 is exaclty same as player1, So I will skip commenting    #
+# =============================================================================
 
 #Player 2's Turn
 root = Tk()
@@ -74,6 +119,9 @@ def roll_dice_2():
         label.configure(text='Bust!',font=("helvetica",150))
         label.pack()
         count2 = 0
+        label3 = Label(root, text="You Got Busted!",font=("helvetica",30)) 
+        label3.pack()
+        root.after(1500,lambda: root.destroy())
     else:
         label.configure(text=f'{dice_roll}')
         label.pack()
@@ -88,12 +136,7 @@ button4.pack()
 button5 = Button(root,text='Hold',command = root.destroy, padx=10,pady=10)
 button5.pack()
 
-button6 = Button(root,text='I Got Busted',command = root.destroy,padx=10,pady=10)
-button6.pack()
-
 root.mainloop()
-
-
 
 #Pop up screen to show the result of the game
 root = Tk()
@@ -109,14 +152,15 @@ label = Label(root,text='',font=('Helvetica',30))
 if count2 > count:
     label.configure(text="Player2 Wins!") #Modity label to player 2 wins if player 2 have more points
     label.pack()
-else:
+elif count > count2:
     label.configure(text="Player1 Wins!") #Modity label to player 1 wins if player 2 have more points
     label.pack()
+elif count == count2:
+    label.configure(text="Draw") #Modity label to player 1 wins if player 2 have more points
+    label.pack()
+
 
 root.mainloop()
 
 
-
-
-
-
+    
